@@ -2,29 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kali Linux Themed Site</title>
+  <title>Kali Desktop Web</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Wallpaper Background -->
+  <div class="wallpaper"></div>
+
+  <!-- Desktop Icons -->
+  <div class="desktop-icons">
+    <div class="icon">
+      <img src="icons/terminal.png" alt="Terminal">
+      <p>Terminal</p>
+    </div>
+    <div class="icon">
+      <img src="icons/folder.png" alt="Files">
+      <p>Files</p>
+    </div>
+    <!-- Add more icons as needed -->
+  </div>
+
+  <!-- Sidebar Menu -->
   <div class="sidebar">
     <h2>Kali Menu</h2>
     <ul>
       <li><a href="#">Terminal</a></li>
       <li><a href="#">Tools</a></li>
       <li><a href="#">Settings</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#">Logout</a></li>
     </ul>
   </div>
 
+  <!-- Main Content Area -->
   <div class="main-content">
-    <h1>Welcome to Kali Web</h1>
-    <p>This site mimics the look of Kali Linux.</p>
-    <div class="terminal-box">
-      <p><span class="prompt">root@kali:~#</span> ls -la</p>
-      <p>drwxr-xr-x  5 root root 4096 .</p>
-      <p>drwxr-xr-x  2 root root 4096 ..</p>
-      <p>-rw-r--r--  1 root root  123 index.html</p>
-    </div>
+    <h1>Welcome to Kali Web Desktop</h1>
+    <p>This is a simulated Kali Linux interface using HTML and CSS.</p>
   </div>
 </body>
 </html>
+

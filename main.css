@@ -1,63 +1,91 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Courier New', monospace;
-  background-color: #0f1112;
-  color: #e0e0e0;
-  display: flex;
+  padding: 0;
 }
 
+body, html {
+  height: 100%;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Wallpaper Background */
+.wallpaper {
+  background-image: url("kaliwallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Sidebar Menu */
 .sidebar {
   width: 220px;
-  background-color: #1a1c1d;
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 20px;
   height: 100vh;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #00b7ff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
 .sidebar h2 {
-  color: #00b7ff;
   border-bottom: 1px solid #00b7ff;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
-  margin-top: 20px;
 }
 
 .sidebar ul li a {
   text-decoration: none;
   color: #e0e0e0;
   display: block;
-  padding: 10px;
+  padding: 10px 5px;
   transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
   background-color: #00b7ff;
   color: #000;
+  border-radius: 4px;
 }
 
+/* Main Content */
 .main-content {
-  padding: 300px;
-  flex-grow: 1;
+  margin-left: 240px;
+  padding: 30px;
+  color: white;
 }
 
-h1 {
-  color: #00b7ff;
+/* Desktop Icons */
+.desktop-icons {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
 }
 
-.terminal-box {
-  background-color: #000;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #33ff33;
-  box-shadow: 0 0 10px #00b7ff;
+.icon {
+  text-align: center;
+  width: 70px;
+  color: white;
 }
 
-.prompt {
-  color: #00b7ff;
+.icon img {
+  width: 64px;
+  height: 64px;
 }
