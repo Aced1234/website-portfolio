@@ -13,7 +13,7 @@ body, html {
 
 /* Wallpaper Background */
 .wallpaper {
-  background-image: url("../images/iwallpaper.jpg");
+  background-image: url("images/kaliwallpaper.jpg");
   background-size: cover;
   background-position: center;
   filter: brightness(0.8);
@@ -22,6 +22,7 @@ body, html {
   height: 100%;
   z-index: -1;
 }
+
 
 /* Sidebar Menu */
 .sidebar {
