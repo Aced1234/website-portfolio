@@ -7,43 +7,45 @@
 </head>
 <body>
   <div class="wallpaper"></div>
-
-  <h1 style="position: relative; z-index: 2; color: white; padding: 50px;">
-    Test Text Over Wallpaper
-  </h1>
 </body>
 </html>
 
+ <div class="top-bar">
+  <div class="left-icons">
+    <img src="../website-portfolio/images/kali-logo.jpg" alt="Kali Logo">
+    <span class="separator"></span>
+    <img src="../website-portfolio/images/terminal.png" alt="Terminal" id="open-terminal">
 
-  <!-- Desktop Icons -->
-  <div class="desktop-icons">
-    <div class="icon">
-      <img src="icons/terminal.png" alt="Terminal">
-      <p>Terminal</p>
-    </div>
-    <div class="icon">
-      <img src="icons/folder.png" alt="Files">
-      <p>Files</p>
-    </div>
-    <!-- Add more icons as needed -->
+    <!-- Add more icons here -->
+  </div>
+  <div class="workspace-tabs">
+    <span class="tab active">1</span>
+  </div>
+</div>
+
+<!-- 🔹 Terminal window -->
+  <div id="terminal" class="terminal-container">
+  <div id="terminalHeader" class="terminal-header">
+    <span class="terminal-dot red" id="btn-close"></span>
+    <span class="terminal-dot yellow" id="btn-minimise"></span>
+    <span class="terminal-dot green" id="btn-maximise"></span>
+    <span class="terminal-title">root@kali:~</span>
   </div>
 
-  <!-- Sidebar Menu -->
-  <div class="sidebar">
-    <h2>Kali Menu</h2>
-    <ul>
-      <li><a href="#">Terminal</a></li>
-      <li><a href="#">Tools</a></li>
-      <li><a href="#">Settings</a></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
+  <div class="terminal-body" id="terminal-body">
+  <div class="line">
+    <span class="prompt">root@kali:~#</span>
+    <input type="text" id="terminal-input" autocomplete="off" autofocus>
   </div>
+</div>
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <h1>Welcome to Kali Web Desktop</h1>
-    <p>This is a simulated Kali Linux interface using HTML and CSS.</p>
-  </div>
+  <div class="resize-handle"></div>
+</div>
+
+  <!-- ✅ External JS script (assuming it’s in the same folder or adjust path accordingly) -->
+  <script src="scripts/draglogic.js"></script>
+  <script src="scripts/terminalwindow.js"></script>
+  <script src="scripts/interactiveterminal.js"></script>
+
 </body>
 </html>
-

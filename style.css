@@ -4,16 +4,17 @@
   padding: 0;
 }
 
-body, html {
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  font-family: 'Courier New', monospace;
-  overflow: hidden;
-  position: relative;
+  overflow: hidden; /* 🔒 Prevent scrolling */
 }
+
 
 /* Wallpaper Background */
 .wallpaper {
-  background-image: url("../website-portfolio/images/kaliwallpaper.jpg");
+  background-image: url("../website-portfolio/images/kaliwallpaper2.png");
   background-size: cover;
   background-position: center;
   filter: brightness(0.8);
@@ -21,73 +22,155 @@ body, html {
   width: 100%;
   height: 100%;
   z-index: -1;
-  border: 5px solid red;
 }
 
 
-/* Sidebar Menu */
-.sidebar {
-  width: 220px;
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 20px;
-  height: 100vh;
+.top-bar {
   position: fixed;
-  left: 0;
   top: 0;
-  color: #00b7ff;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.5);
-  z-index: 2;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #1b2b34; /* dark blue-grey */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-.sidebar h2 {
-  border-bottom: 1px solid #00b7ff;
-  margin-bottom: 15px;
-  padding-bottom: 5px;
+.left-icons, .right-icons, .workspace-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.sidebar ul {
-  list-style: none;
+.left-icons img,
+.right-icons img {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: #e0e0e0;
-  display: block;
-  padding: 10px 5px;
-  transition: 0.3s;
+.separator {
+  width: 1.5px;
+  height: 25px;
+  background-color: #666;
+  margin: 0 8px;
+  display: inline-block;
 }
 
-.sidebar ul li a:hover {
+
+.workspace-tabs {
+  gap: 5px;
+}
+
+.tab {
+  padding: 4px 8px;
+  background-color: #293b45;
+  color: #c0c0c0;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tab.active {
   background-color: #00b7ff;
   color: #000;
-  border-radius: 4px;
 }
 
-/* Main Content */
-.main-content {
-  margin-left: 240px;
-  padding: 30px;
-  color: white;
-}
 
-/* Desktop Icons */
-.desktop-icons {
+.terminal-container {
   position: absolute;
-  top: 20px;
-  left: 250px;
+  top: 100px;
+  left: 100px;
+  width: 700px;
+  max-width: 90%;
+  margin: 100px auto;
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 183, 255, 0.4);
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #33ff33;
+}
+
+.terminal-header {
+  background-color: #1a1a1a;
+  padding: 8px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1;
+  align-items: center;
+  gap: 8px;
+  position: static;
 }
 
-.icon {
-  text-align: center;
-  width: 70px;
-  color: white;
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.icon img {
-  width: 64px;
-  height: 64px;
+.terminal-dot.red { background-color: #ff5f56; }
+.terminal-dot.yellow { background-color: #ffbd2e; }
+.terminal-dot.green { background-color: #27c93f; }
+
+.terminal-title {
+  margin-left: auto;
+  color: #fff;
+  font-size: 14px;
+}
+
+.terminal-body {
+  padding: 20px;
+  background-color: #000;
+  font-size: 16px;
+  min-height: 300px;
+}
+
+.prompt {
+  color: #00b7ff;
+}
+
+.resize-handle {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: nwse-resize;
+  background: transparent;
+}
+
+.terminal-container.minimised {
+  height: auto;
+  width: fit-content;
+}
+
+.terminal-container.maximised {
+  border-radius: 0;
+  width: 100%;
+}
+
+#terminal {
+  display: none;
+}
+
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  outline: none;
+  width: 90%;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
 }
