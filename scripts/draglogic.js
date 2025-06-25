@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const terminal = document.getElementById("terminal");
   const header = document.getElementById("terminalHeader");
+  
 
   let isDragging = false;
   let offsetX = 0, offsetY = 0;
