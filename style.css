@@ -83,11 +83,9 @@ html, body {
 
 .terminal-container {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  top: 50px;
   width: 700px;
-  max-width: 90%;
-  margin: 100px auto;
+  max-width: 100%;
   background-color: #000;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 183, 255, 0.4);
@@ -153,9 +151,6 @@ html, body {
   width: 100%;
 }
 
-#terminal {
-  display: none;
-}
 
 
 #terminal-input {
@@ -173,4 +168,9 @@ html, body {
   align-items: center;
   gap: 6px;
   padding: 2px 0;
+}
+
+#terminal-welcome {
+  color: #ff0000;
+  margin-bottom: 6px;
 }

@@ -23,7 +23,7 @@ document.getElementById("btn-maximise").addEventListener("click", () => {
   terminal.classList.toggle("maximised");
 
   if (terminal.classList.contains("maximised")) {
-    terminal.style.top = "0";
+    terminal.style.top = "40px";
     terminal.style.left = "0";
     terminal.style.width = "100%";
     terminal.style.height = "100vh";
@@ -37,21 +37,59 @@ document.getElementById("btn-maximise").addEventListener("click", () => {
   }
 });
 
-document.getElementById("open-terminal").addEventListener("click", () => {
+
+window.addEventListener("DOMContentLoaded", () => {
   const terminal = document.getElementById("terminal");
-
-  terminal.style.display = "block"; // Show terminal if hidden
-  terminal.classList.remove("minimised"); // Optional: remove minimised state
-  terminal.classList.remove("maximised"); // Optional: prevent stuck fullscreen
-
-  // Reset styles if needed
-  terminal.style.width = "700px";
-  terminal.style.height = "auto";
-  terminal.style.top = "100px";
-  terminal.style.left = "100px";
-
   const body = terminal.querySelector(".terminal-body");
-  const resize = terminal.querySelector(".resize-handle");
-  body.style.display = "block";
-  resize.style.display = "block";
+
+  // Prevent duplicate message on re-open
+  const previousMessage = document.getElementById("terminal-welcome");
+  if (previousMessage) previousMessage.remove();
+
+  // ✅ Insert welcome message above the input line
+  const welcome = document.createElement("div");
+  welcome.classList.add("line");
+  welcome.id = "terminal-welcome";
+  welcome.textContent = "Hi and welcome to my portfolio! You may opt to use the command terminal or select the desktop icons on the right for more information. Type 'help' to begin.";
+
+  const inputLine = body.querySelector(".line");
+  if (inputLine) {
+    body.insertBefore(welcome, inputLine);
+  } else {
+    body.appendChild(welcome);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const icon = document.getElementById("open-terminal-icon");
+  const terminal = document.getElementById("terminal");
+  const body = document.getElementById("terminal-body");
+
+  if (icon) {
+    icon.addEventListener("click", () => {
+      // Show terminal if it's hidden
+      terminal.style.display = "block";
+
+      // If there's no input field, re-inject welcome + input
+      if (!document.getElementById("terminal-input")) {
+        // Insert welcome message
+        const welcome = document.createElement("div");
+        welcome.classList.add("line");
+        welcome.id = "terminal-welcome";
+        welcome.innerHTML = `Hi and welcome to my portfolio! You may opt to use the command terminal or select the desktop icons on the right for more information. Type 'help' to begin.`;
+        body.appendChild(welcome);
+
+        // Insert input line
+        const inputLine = document.createElement("div");
+        inputLine.classList.add("line");
+        inputLine.innerHTML = `
+          <span class="prompt">root@kali:~#</span>
+          <input type="text" id="terminal-input" autocomplete="off" autofocus>
+        `;
+        body.appendChild(inputLine);
+
+        bindTerminalInput(); // rebind input
+      }
+    });
+  }
 });

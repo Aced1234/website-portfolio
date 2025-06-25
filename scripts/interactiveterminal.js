@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.getElementById("terminal-body");
 
   const commands = {
-    help: "Available commands: help, about, clear, open-window",
-    about: "This is a custom Kali Linux web terminal built by [Your Name].",
-    clear: "clear", // special command
+    help: "Available commands: help, about, open-window, languages, tools",
+    about: "OPEN_ABOUT_WINDOW", // signal to open about page
+    languages: "Python, JavaScript, C++, Bash, HTML/CSS",
+    tools: "Burp Suite, Wireshark, Metasploit, Nmap, SQLMap",
+    python: "Python is a versatile programming language used for web development, data analysis, artificial intelligence, and more.",
     "open-window": "OPEN_WINDOW", // signal to trigger something
   };
 
@@ -18,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
       body.insertBefore(outputLine, input.parentElement);
 
       if (cmd in commands) {
-        if (commands[cmd] === "clear") {
-          body.innerHTML = ""; // Clear everything
-        } else if (commands[cmd] === "OPEN_WINDOW") {
+        if (commands[cmd] === "OPEN_WINDOW") {
           openCustomWindow(); // You define this function
+        } else if (commands[cmd] === "OPEN_ABOUT_WINDOW") {
+          openAboutWindow(); // You define this function
         } else {
           const resultLine = document.createElement("div");
           resultLine.classList.add("line");
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//this is the test window function
 function openCustomWindow() {
   const win = document.createElement("div");
   win.className = "terminal-container";
@@ -50,8 +53,6 @@ function openCustomWindow() {
   win.innerHTML = `
     <div class="terminal-header">
       <span class="terminal-dot red" onclick="this.parentElement.parentElement.remove()"></span>
-      <span class="terminal-dot yellow"></span>
-      <span class="terminal-dot green"></span>
       <span class="terminal-title">custom@kali:~</span>
     </div>
     <div class="terminal-body">
@@ -60,3 +61,23 @@ function openCustomWindow() {
   `;
   document.body.appendChild(win);
 }
+
+//this is the function that opens the window for the about page
+function openAboutWindow() {
+  const win = document.createElement("div");
+  win.className = "terminal-container";
+  win.style.top = "220px";
+  win.style.left = "220px";
+  win.innerHTML = `
+    <div class="terminal-header">
+      <span class="terminal-dot red" onclick="this.parentElement.parentElement.remove()"></span>
+      <span class="terminal-title">about@kali:~</span>
+    </div>
+    <div class="terminal-body">
+      <p>This is my digital portfolio, styled after Kali Linux — a popular tool for cybersecurity enthusiasts and hackers alike.</p>
+      <p>Explore the terminal or click desktop icons to learn more. Thanks for visiting!</p>
+    </div>
+  `;
+  document.body.appendChild(win);
+}
+
