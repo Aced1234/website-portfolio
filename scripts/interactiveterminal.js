@@ -86,7 +86,7 @@ function openAboutWindow() {
   <h1 style="text-align: center; font-size: 24px; margin-top: 0; margin-bottom: 16px;"><strong>Welcome to my Portfolio!</strong></h1>
 
   <p style="font-size: 16px; margin-bottom: 18px;">
-    <strong><u>This is my digital portfolio, styled after Kali Linux</u></strong>, a powerful platform used by cybersecurity professionals and ethical hackers.
+    <strong><u>This is my digital pfolio, styled after Kali Linux</u></strong>, a powerful platform used by cybersecurity professionals and ethical hackers.
   </p>
 
   <p style="font-size: 15px; margin-bottom: 18px;">
