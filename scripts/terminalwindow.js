@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const welcome = document.createElement("div");
   welcome.classList.add("line");
   welcome.id = "terminal-welcome";
-  welcome.textContent = "Hi and welcome to my portfolio! You may opt to use the command terminal or select the desktop icons on the right for more information. Type 'help' to begin.";
+  welcome.textContent = "Hi and welcome to my portfolio! You may opt to use the command terminal or select the desktop icons on the right for more information. Type 'help' for a list of commands or 'about' to learn more about this portfolio.";
 
   const inputLine = body.querySelector(".line");
   if (inputLine) {

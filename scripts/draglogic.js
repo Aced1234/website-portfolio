@@ -59,3 +59,34 @@ resizeHandle.addEventListener("mousedown", function (e) {
   document.documentElement.addEventListener("mousemove", doDrag, false);
   document.documentElement.addEventListener("mouseup", stopDrag, false);
 });
+
+
+
+
+// Function to make the terminal window draggable
+function makeDraggable(element) {
+  const header = element.querySelector('.terminal-header');
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  header.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - element.offsetLeft;
+    offsetY = e.clientY - element.offsetTop;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    element.style.left = `${e.clientX - offsetX}px`;
+    element.style.top = `${e.clientY - offsetY}px`;
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  }
+}

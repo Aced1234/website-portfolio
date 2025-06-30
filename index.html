@@ -10,11 +10,23 @@
 </body>
 </html>
 
- <div class="top-bar">
-  <div class="left-icons">
-    <img src="../website-portfolio/images/kali-logo.jpg" alt="Kali Logo">
-    <span class="separator"></span>
-    <img src="../website-portfolio/images/terminal.png" alt="Terminal" id="open-terminal-icon">
+<body>
+  <div class="wallpaper"></div>
+
+  <div class="top-bar">
+    <div class="left-icons">
+      <img src="../website-portfolio/images/kali-logo.jpg" alt="Kali Logo" id="kali-logo">
+      <span class="separator"></span>
+      <img src="../website-portfolio/images/terminal.png" alt="Terminal" id="open-terminal-icon">
+
+      <div id="logo-dropdown-menu" class="dropdown-menu">
+        <div class="dropdown-item">About</div>
+        <div class="dropdown-item">Projects</div>
+        <div class="dropdown-item">Contact</div>
+      </div>
+    </div>
+  </div>
+</body>
 
     <!-- Add more icons here -->
   </div>
@@ -23,7 +35,7 @@
   </div>
 </div>
 
-<!-- 🔹 Terminal window -->
+<!-- Terminal window -->
   <div id="terminal" class="terminal-container">
   <div id="terminalHeader" class="terminal-header">
     <span class="terminal-dot red" id="btn-close"></span>
@@ -42,10 +54,11 @@
   <div class="resize-handle"></div>
 </div>
 
-  <!-- ✅ External JS script (assuming it’s in the same folder or adjust path accordingly) -->
+  <!-- External JS script (assuming it’s in the same folder or adjust path accordingly) -->
   <script src="../website-portfolio/scripts/draglogic.js"></script>
   <script src="../website-portfolio/scripts/terminalwindow.js"></script>
   <script src="../website-portfolio/scripts/interactiveterminal.js"></script>
+  <script src="../website-portfolio/scripts/logoDropdown.js"></script>
 
 
 </body>
